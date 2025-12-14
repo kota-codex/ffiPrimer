@@ -1,0 +1,20 @@
+using sys { String, Blob }
+
+class MyClass {
+    publicApi(params) Result {
+        Result.{
+            _internalMethod(_, params);
+        }
+    }
+    _handle = sys_handle;
+    _internalMethod(q Query, sql str, flags int);
+}
+fn afterCopyMyClass(c MyClass) { c._handle := sys_handle; }
+fn disposeMyClass(c MyClass);
+
+class Result{
+    getAttr() int;
+    _handle = sys_handle;
+}
+fn afterCopyResult(r Result) { r._handle := sys_handle; }
+fn disposeResult(r Result);

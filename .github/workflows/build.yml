@@ -1,0 +1,5 @@
+on:
+  workflow_dispatch:
+jobs:
+  call-shared: #fills caches if launched from main
+    uses: kota-codex/ag-modules-ci/.github/workflows/build.yml@main
